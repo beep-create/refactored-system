@@ -1,0 +1,50 @@
+.heading {
+    font-size: 30px;
+    width: 100%;
+    margin: 0px; 
+    font-family: 'Vibes', cursive;
+    box-shadow: 5px 5px 5px black;
+}
+
+.note {
+    font-size: 28px;
+    color: black;
+}
+
+body {
+    background-size: cover;
+}
+
+.div_speed  {
+    float: left;
+
+}
+.div_volume {
+    float: right;
+}
+
+.div_speed_img , .div_volume_img {
+    width: 200px;
+    border-radius: 100px;
+}
+
+#speed, #volume {
+ font-size: 37px;
+ font-family: 'Dawning of a New Day', cursive; 
+
+}
+
+.play_button {
+    font-family: 'Dawning of a New Day', cursive; 
+    font-size: 30px;
+    width: 120px;
+    margin-top: 20px;
+}
+
+canvas {
+    border: 5px solid white;
+    border-radius: 20px;
+    margin-top: 170px;
+   
+}
+
