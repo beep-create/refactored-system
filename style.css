@@ -2,8 +2,7 @@
     font-size: 30px;
     width: 100%;
     margin: 0px; 
-    font-family: 'Vibes', cursive;
-    box-shadow: 5px 5px 5px black;
+    font-family: 'Rampart One', cursive;
 }
 
 .note {
@@ -30,12 +29,12 @@ body {
 
 #speed, #volume {
  font-size: 37px;
- font-family: 'Dawning of a New Day', cursive; 
+ font-family: 'Festive', cursive;
 
 }
 
 .play_button {
-    font-family: 'Dawning of a New Day', cursive; 
+    font-family: 'Festive', cursive;
     font-size: 30px;
     width: 120px;
     margin-top: 20px;
