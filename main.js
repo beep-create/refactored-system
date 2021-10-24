@@ -23,10 +23,12 @@ function gotPoses(results)
   if(results.length > 0) {
     console.log(results);
 
+   scoreLeftwrist=results[0].pose.keypoints[9].score;
+   scoreRightwrist=results[0].pose.keypoints[10].score;
 
     
-    leftwristX=results[0].pose.leftWrist.x;
-    leftwristY=results[0].pose.leftWrist.y;
+   leftwristX=results[0].pose.leftWrist.x;
+   leftwristY=results[0].pose.leftWrist.y;
 
     rightwristX=results[0].pose.rightWrist.x;
     rightwristY=results[0].pose.rightWrist.y;
@@ -52,22 +54,54 @@ image(video,0,0,600,500);
 
 fill("#FF0000");
 stroke("#FF0000");
-circle(leftwristX, leftwristY, 20);
 
-InNumberleftwristY = Number(leftwristY);
-remove_decimals = floor(InNumberleftwristY);
-volume = remove_decimals/500;
-document.getElementById("volume").innerHTML= "volume = " + volume;
-
-song.setVolume(volume);
+if(scoreLeftwrist > 0.2) {
+  circle(leftwristX, leftwristY, 20);
 
 
-InNumberrightwristY = Number(rightwristY);
-remove_decimals = floor(InNumberrightwristY);
-speed = remove_decimals/500;
-document.getElementById("speed").innerHTML= "speed = " + speed;
+  InNumberleftwristY = Number(leftwristY);
+  remove_decimals = floor(InNumberleftwristY);
+  volume = remove_decimals/500;
+  document.getElementById("volume").innerHTML= "volume = " + volume;
+  
+  song.setVolume(volume);
+  
+}
 
-song.rate(speed);
+fill("#FF0000");
+stroke("#FF0000");
+
+if (scoreRightwrist > 0.2){
+  circle(rightwristX, rightwristY, 20);
+
+if (rightwristY > 0 && rightwristX <= 100) {
+  document.getElementById("speed").innerHTML= "speed = 0.5";
+  song.rate(0.5);
+
+}
+
+else if (rightwristY > 100 && rightwristX <= 200){
+document.getElementById("speed").innerHTML= "speed = 1";
+song.rate(1);
+}
+
+else if (rightwristY > 200 && rightwristX <= 300) {
+document.getElementById("speed").innerHTML= "speed = 1.5";
+song.rate(1.5);
+}
+
+else if (rightwristY > 300 && rightwristX <= 400) {
+  document.getElementById("speed").innerHTML= "speed = 2";
+  song.rate(2);
+}
+
+else if (rightwristY > 400 && rightwristX <= 500) {
+  document.getElementById("speed").innerHTML= "speed = 2.5";
+  song.rate(2.5);
+}
+
+}
+
 }
 
 
